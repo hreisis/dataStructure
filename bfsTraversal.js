@@ -1,9 +1,8 @@
 //Level Order Binary Tree Traversal
 var levelOrder = function(root) {
     let res = [], queue = [];
-    queue.push(root);
-    if(root === null) {
-        return res;
+    if(root !== null){
+        queue.push(root);
     }
     while(queue.length !== 0) {
         //record current level nodes number
@@ -15,7 +14,7 @@ var levelOrder = function(root) {
             curLevel.push(node.val);
             //save next level nodes
             node.left && queue.push(node.left);
-            node.right && queue.push(node.right);0
+            node.right && queue.push(node.right);
         }
         //push to result array
         res.push(curLevel);

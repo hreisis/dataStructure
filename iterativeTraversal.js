@@ -23,17 +23,17 @@ var preorderTraversal = function(root, res = []){
  */
 var inorderTraversal = function(root, res = []) {
     const stack = [];
-    let cur = root;
+    let cur = root; //use node to loop through
     while(stack.length || cur) {
         if(cur) {
             stack.push(cur);
             // 左 far to the left
             cur = cur.left;
         } else {
-            // --> 弹出 中 到了空节点
+            // --> 左为空 就弹出 中 
             cur = stack.pop();
             res.push(cur.val); 
-            // 右
+            // loop throught right 
             cur = cur.right;
         }
     };
